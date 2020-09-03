@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_02_210954) do
+ActiveRecord::Schema.define(version: 2020_09_03_153608) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,6 +32,10 @@ ActiveRecord::Schema.define(version: 2020_09_02_210954) do
     t.integer "fips"
     t.integer "cases"
     t.integer "deaths"
+    t.integer "confirmed_cases"
+    t.integer "confirmed_deaths"
+    t.integer "probable_cases"
+    t.integer "probable_deaths"
   end
 
   create_table "trips", force: :cascade do |t|
@@ -50,7 +54,7 @@ ActiveRecord::Schema.define(version: 2020_09_02_210954) do
     t.string "last_name"
     t.string "dob"
     t.string "user_name"
-    t.string "password"
+    t.string "password_digest"
     t.string "current_location"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

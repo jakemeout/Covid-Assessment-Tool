@@ -8,21 +8,22 @@ class Nytuscounty < ApplicationRecord
     def self.get_data_first
         uri = URI.parse('https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties.csv')
         res = Net::HTTP.get(uri)
-        something = CSV.parse(res)
-        # while i < something.length do 
-        # end
-        p something[1][0]
+        values = CSV.parse(res)
+        columns = [:date, :county, :state, :fips, :cases, :deaths]
+
+        Nytuscounty.import columns, values, validate: false
+        
     end
 
-    # def self.update_data
-    #     uri = URI.parse('https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties.csv')
-    #     res = Net::HTTP.get(uri)
-    #     val = CSV.parse(res)
-    #     #something slower that uses updateßß
-        
-    #     # Nytuscounty.update
-        
-    # end
+    def self.update_data
+        uri = URI.parse('https://raw.githubusercontent.com/nytimes/covid-19-data/master/live/us-counties.csv')
+        res = Net::HTTP.get(uri)
+        values = CSV.parse(res)
+        columns = [:date, :county, :state, :fips, :cases, :deaths, :confirmed_cases, :confirmed_deaths, :probable_cases, :probable_deaths]
+
+        Nytuscounty.import columns, values, on_duplicate_key_update: {conflict_target: [:id], columns: [:date, :county, :state, :fips, :cases, :deaths, :confirmed_cases, :confirmed_deaths, :probable_cases, :probable_deaths]}
+
+    end
 end
 
-#  unique_by: :fips
+# {conflict_target: [:date, :fips], columns: {county: state: cases: deaths: confirmed_cases: confirmed_deaths: probable_cases: probable_deaths:}}
