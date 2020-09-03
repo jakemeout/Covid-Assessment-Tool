@@ -21,7 +21,7 @@ class Nytuscounty < ApplicationRecord
         values = CSV.parse(res)
         columns = [:date, :county, :state, :fips, :cases, :deaths, :confirmed_cases, :confirmed_deaths, :probable_cases, :probable_deaths]
 
-        Nytuscounty.import columns, values, on_duplicate_key_update: {conflict_target: [:id], columns: [:date, :county, :state, :fips, :cases, :deaths, :confirmed_cases, :confirmed_deaths, :probable_cases, :probable_deaths]}
+        Nytuscounty.import columns, values
 
     end
 end
