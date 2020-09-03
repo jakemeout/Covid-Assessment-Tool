@@ -8,11 +8,11 @@ class Nytuscounty < ApplicationRecord
     def self.get_data_first
         uri = URI.parse('https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties.csv')
         res = Net::HTTP.get(uri)
-        values = CSV.parse(res)
-        columns = [:date, :county, :state, :fips, :cases, :deaths]
-
-        Nytuscounty.import columns, values, validate: false
-        
+        items = []
+        CSV.parse(res, headers: true) do |row|
+          items << row.to_h
+        end
+        Nytuscounty.import(items)
     end
 
     def self.update_data
