@@ -34,22 +34,19 @@ class Nytuscounty < ApplicationRecord
             end
             obj.save
         end
-
     end
 
-    def self.get_population(fips)
-            num = fips.to_s
-            county = num.last(3)
-        if num.length < 5
-            state = "0" + num.first()
-        end
+    # def self.get_population(fips)
+    #         county = fips.last(3)
+    #     if fips.length < 5
+    #         state = "0" + fips.first()
+    #     else
+    #         state = fips.first(2)
+    #     end
         
-            uri = URI(`https://api.census.gov/data/2019/pep/population?get=COUNTY,DATE_CODE,DATE_DESC,DENSITY,POP,NAME,STATE&for=county:#{county}&for=state:#{state}key=#{ENV["census_gov_key"]}`)
-            
-            res = Net::HTTP.get(uri)
-            res
-            byebug
-    end
+    #         uri = URI.parse("https://api.census.gov/data/2019/pep/population?get=COUNTY,DATE_CODE,DATE_DESC,DENSITY,POP,NAME,STATE&DATE_CODE=12&for=county:#{county}&in=state:#{state}")
+    #         res = Net::HTTP.get(uri)
+    #         data = JSON.parse(res)
+    #         byebug
+    # end
 end
-
-# {conflict_target: [:date, :fips], columns: {county: state: cases: deaths: confirmed_cases: confirmed_deaths: probable_cases: probable_deaths:}\
