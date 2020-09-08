@@ -4,7 +4,7 @@ class UsersController < ApplicationController
     def profile
         render json: { user: current_user }, status: :accepted
     end
-
+    
     def create
       
         @user = User.create(user_params)
@@ -20,7 +20,7 @@ class UsersController < ApplicationController
      
       private
       def user_params
-        params.require(:user).permit(:user_name, :password, :first_name, :last_name, :dob, :password_digest, :current_location)
+        params.require(:user).permit(:user_name, :password, :first_name, :last_name, :dob, :current_location)
       end
 
 end

@@ -12,7 +12,8 @@ class Nytuscounty < ApplicationRecord
         CSV.parse(res, headers: true) do |row|
             items << row.to_h
         end
-        Nytuscounty.import(items)
+        
+        Nytuscounty.upsert_all(items)
     end
 
     def self.update_data
@@ -37,4 +38,4 @@ class Nytuscounty < ApplicationRecord
     end
 end
 
-# {conflict_target: [:date, :fips], columns: {county: state: cases: deaths: confirmed_cases: confirmed_deaths: probable_cases: probable_deaths:}}
+# {conflict_target: [:date, :fips], columns: {county: state: cases: deaths: confirmed_cases: confirmed_deaths: probable_cases: probable_deaths:}\
