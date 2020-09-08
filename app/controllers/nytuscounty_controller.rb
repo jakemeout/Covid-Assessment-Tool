@@ -1,7 +1,7 @@
 class NytuscountyController < ApplicationController
     # before_action :authorized
 
-    def self.getdata
+    def getdata
         @data = []
         @fips = params[:fips]
 
