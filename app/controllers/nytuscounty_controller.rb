@@ -4,7 +4,7 @@ class NytuscountyController < ApplicationController
     def getdata
         @data = []
         @fips = params[:fips]
-        (Date.today-7..Date.today).each do |d|
+        (Date.today-15..Date.today).each do |d|
             @data.push(Nytuscounty.where(date: d.strftime("%Y-%m-%d"), fips: @fips))
         end
         render json: { data: @data }, status: :accepted

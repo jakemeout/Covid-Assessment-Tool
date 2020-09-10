@@ -5,6 +5,8 @@ require 'activerecord-import'
 
 class Nytuscounty < ApplicationRecord
 
+
+    ## The data within NYT is total and there are some counties that do not have fips such as NY as the boroughs are all within NYC.... so sad le sigh.
     def self.get_data_first
         uri = URI.parse('https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties.csv')
         res = Net::HTTP.get(uri)
@@ -35,6 +37,7 @@ class Nytuscounty < ApplicationRecord
             obj.save
         end
     end
+    
 
     # def self.get_population(fips)
     #         county = fips.last(3)
