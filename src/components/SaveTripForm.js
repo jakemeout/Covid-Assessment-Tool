@@ -25,7 +25,7 @@ class SaveTripForm extends React.Component {
             body: JSON.stringify({trip:tripObj})
         }
         
-        fetch(`http://localhost:3001/trips`, options)
+        fetch(`https://covid-travel-assessment-api.herokuapp.com/trips`, options)
     }
 
     getRiskAssessment = () => {

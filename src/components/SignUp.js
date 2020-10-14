@@ -45,7 +45,7 @@ export default class SignUp extends Component {
             body: JSON.stringify({user:userObj})
         }
         
-        fetch("http://localhost:3001/users", options)
+        fetch("https://covid-travel-assessment-api.herokuapp.com/users", options)
         .then(response => response.json())
         .then(response => {
             this.setCookie("jwt",response.jwt,1)
