@@ -11,7 +11,7 @@ export default [
         ]
     },
     {
-        "featureType": "all",
+        "featureType": "all",    
         "elementType": "geometry.stroke",
         "stylers": [
             {
