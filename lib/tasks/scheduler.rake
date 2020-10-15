@@ -5,3 +5,5 @@ task :update_nyt => :environment do
   Nytuscounty.get_data_first
   puts "done."
 end
+
+
