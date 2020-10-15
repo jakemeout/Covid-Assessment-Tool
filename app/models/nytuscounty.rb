@@ -1,6 +1,7 @@
 require 'csv'
 require 'net/http'
 require 'activerecord-import'
+require 'down'
 
 class Nytuscounty < ApplicationRecord
 
@@ -9,14 +10,28 @@ class Nytuscounty < ApplicationRecord
     def self.get_data_first
         Nytuscounty.delete_all
 
-        uri = URI.parse('https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties.csv')
-        res = Net::HTTP.get(uri)
-        items = []
-        # CSV.parse(res, headers: true) do |row|
-        #     items << row.to_h
-        # end
+        # uri = URI.parse('https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties.csv')
+        # res = Net::HTTP.get(uri)
+        # items = []
+        # # CSV.parse(res, headers: true) do |row|
+        # #     items << row.to_h
+        # # end
 
-        CSV.parse(res, headers: true) do |row|
+        url = 'https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties.csv'
+        total = 0
+        
+        puts 'start file download...'
+        
+        file = Down.download(
+			url,
+			read_timeout: 300,
+			content_length_proc: lambda { |t| total = t },
+			progress_proc: lambda { |p| puts p.to_s + ':' + total.to_s }
+        )
+        
+        puts 'file downloaded.'
+        items = []
+        CSV.foreach(file, headers: true) do |row|
                 items << row.to_h
             end
         Nytuscounty.import(items)
