@@ -1,6 +1,5 @@
 require 'csv'
 require 'net/http'
-require 'active_record'
 require 'activerecord-import'
 
 class Nytuscounty < ApplicationRecord
@@ -17,7 +16,7 @@ class Nytuscounty < ApplicationRecord
         #     items << row.to_h
         # end
 
-        CSV.foreach(res, headers: true) do |row|
+        CSV.parse(res, headers: true) do |row|
                 items << row.to_h
             end
         Nytuscounty.import(items)
