@@ -24,12 +24,13 @@ class Nytuscounty < ApplicationRecord
         puts "looping..."
         file.each do |row|
             
-            if count < 10000 
+            if count < 90000 
                 items << row.to_h
                 count +=1 
             else
                 count = 1
                 Nytuscounty.import(items)
+                items = []
                 puts "just completed a loop"
             end
         end
