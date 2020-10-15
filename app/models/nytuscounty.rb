@@ -10,14 +10,14 @@ class Nytuscounty < ApplicationRecord
     def self.get_data_first
         Nytuscounty.delete_all
 
-        uri = URI.open('https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties.csv')
-        res = Net::HTTP.get(uri)
-        items = []
-        # CSV.parse(res, headers: true) do |row|
-        #     items << row.to_h
-        # end
+        # uri = URI.parse('https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties.csv')
+        # res = Net::HTTP.get(uri)
+        # items = []
+        # # CSV.parse(res, headers: true) do |row|
+        # #     items << row.to_h
+        # # end
 
-        CSV.parse(res, headers: true) do |row|
+        CSV.foreach('https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties.csv', headers: true) do |row|
                 items << row.to_h
             end
         Nytuscounty.import(items)
