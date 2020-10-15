@@ -1,7 +1,7 @@
 require 'csv'
 require 'net/http'
 require 'activerecord-import'
-
+ require 'objspace'
 
 class Nytuscounty < ApplicationRecord
 
@@ -10,17 +10,31 @@ class Nytuscounty < ApplicationRecord
     def self.get_data_first
         Nytuscounty.delete_all
 
-        # uri = URI.parse('https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties.csv')
+        # uri = URI.open('https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties.csv')
+        # byebug
         # res = Net::HTTP.get(uri)
-        # items = []
-        # # CSV.parse(res, headers: true) do |row|
-        # #     items << row.to_h
-        # # end
+        items = []
+        # CSV.parse(res, headers: true) do |row|
+        #     items << row.to_h
+        # end
 
-        CSV.foreach('https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties.csv', headers: true) do |row|
+        uri = URI.open('https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties.csv')
+        file  = CSV.open(uri, headers: true)
+        count = 1
+        puts "looping..."
+        file.each do |row|
+            
+            if count < 10000 
                 items << row.to_h
+                count +=1 
+            else
+                count = 1
+                Nytuscounty.import(items)
+                puts "just completed a loop"
             end
-        Nytuscounty.import(items)
+        end
+        puts "done!"
+            
     end
 
     def self.update_data
