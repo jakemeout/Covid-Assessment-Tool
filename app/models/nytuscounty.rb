@@ -13,11 +13,14 @@ class Nytuscounty < ApplicationRecord
         uri = URI.parse('https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties.csv')
         res = Net::HTTP.get(uri)
         items = []
-        CSV.parse(res, headers: true) do |row|
-            items << row.to_h
-        end
-        
-        Nytuscounty.upsert_all(items)
+        # CSV.parse(res, headers: true) do |row|
+        #     items << row.to_h
+        # end
+
+        CSV.foreach(res, headers: true) do |row|
+                items << row.to_h
+            end
+        Nytuscounty.import(items)
     end
 
     def self.update_data
