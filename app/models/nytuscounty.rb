@@ -8,8 +8,8 @@ class Nytuscounty < ApplicationRecord
 
     ## The data within NYT is total and there are some counties that do not have fips such as NY as the boroughs are all within NYC.... so sad le sigh.
     def self.get_data_first
-        Nytuscounty.destroy_all
-        
+        Nytuscounty.delete_all
+
         uri = URI.parse('https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties.csv')
         res = Net::HTTP.get(uri)
         items = []
