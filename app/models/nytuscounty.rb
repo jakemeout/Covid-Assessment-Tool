@@ -17,7 +17,7 @@ class Nytuscounty < ApplicationRecord
         #     items << row.to_h
         # end
 
-        CSV.parse('https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties.csv', headers: true) do |row|
+        CSV.parse(res, headers: true) do |row|
                 items << row.to_h
             end
         Nytuscounty.import(items)
