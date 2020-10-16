@@ -15,7 +15,7 @@ import './style/PopupBars.css';
 import './style/SavedTrips.css';
 import Map from './components/Map'
 const engine = new Styletron();
-
+   
 export default class App extends React.Component {
 
 /*ToDo Refactor
