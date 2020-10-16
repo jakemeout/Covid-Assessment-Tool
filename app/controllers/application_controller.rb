@@ -25,7 +25,7 @@ class ApplicationController < ActionController::API
           end
         end
              
-        
+          
        
         def current_user
           if decoded_token
