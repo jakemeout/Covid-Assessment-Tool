@@ -10,34 +10,34 @@ class Nytuscounty < ApplicationRecord
     def self.get_data_first
         Nytuscounty.delete_all
 
-        # uri = URI.open('https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties.csv')
-        # byebug
-        # res = Net::HTTP.get(uri)
-        items = []
-        # CSV.parse(res, headers: true) do |row|
-        #     items << row.to_h
-        # end
-
         uri = URI.open('https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties.csv')
-        file  = CSV.open(uri, headers: true)
-        count = 1
+        file  = CSV.parse(uri, headers: true)
+
+        items = []
+        row_count = 1
+        chunk_count = 1
+        
         puts "looping..."
         file.each do |row|
-            
-            if count < 90000 
+            if chunk_count < 90000
                 items << row.to_h
-                count +=1 
+                chunk_count += 1
+                row_count += 1
+                if row_count == (file.length - 6)
+                    Nytuscounty.import(items)
+                    puts "just completed the final loop"
+                end
             else
-                count = 1
                 Nytuscounty.import(items)
+                chunk_count = 1
                 items = []
                 puts "just completed a loop"
             end
         end
         puts "done!"
-            
     end
 
+    # 651162
     def self.update_data
         uri = URI.parse('https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties.csv')
         res = Net::HTTP.get(uri)
