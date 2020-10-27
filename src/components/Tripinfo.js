@@ -136,7 +136,11 @@ class Tripinfo extends React.Component {
             Authorization: `Bearer ${this.props.token}`
             }
         }
+<<<<<<< HEAD
         fetch(`http://covid-travel-assessment-api.herokuapp.com/nytdata/${this.props.destinationfips[0].fips}`,config)
+=======
+        fetch(`https://covid-travel-assessment-api.herokuapp.com/nytdata/${this.props.destinationfips[0].fips}`,config)
+>>>>>>> 63873600c6e921c995efe229c47939f92a947feb
         .then(response => response.json())
         .then(response => {
             this.setState({covidData: response.data})

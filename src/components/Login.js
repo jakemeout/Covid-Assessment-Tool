@@ -38,7 +38,11 @@ import Container from '@material-ui/core/Container';
             body: JSON.stringify({user:userObj})
         }
         
+<<<<<<< HEAD
         fetch("http://covid-travel-assessment-api.herokuapp.com/login", options)
+=======
+        fetch("https://covid-travel-assessment-api.herokuapp.com/login", options)
+>>>>>>> 63873600c6e921c995efe229c47939f92a947feb
         .then(response => response.json())
         .then(response => {
             this.setCookie("jwt",response.jwt,1)
@@ -114,4 +118,4 @@ import Container from '@material-ui/core/Container';
                 </Container>
         );
     }
-}
+} 

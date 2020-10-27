@@ -25,7 +25,11 @@ class SavedTrips extends React.Component{
           }
         }
       
+<<<<<<< HEAD
         fetch(`http://covid-travel-assessment-api.herokuapp.com/trips/${this.state.user_id}`, config)
+=======
+        fetch(`https://covid-travel-assessment-api.herokuapp.com/trips/${this.state.user_id}`, config)
+>>>>>>> 63873600c6e921c995efe229c47939f92a947feb
         .then(response => response.json())
         .then(trip => {
           this.setState({

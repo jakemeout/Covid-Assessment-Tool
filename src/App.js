@@ -15,7 +15,7 @@ import './style/PopupBars.css';
 import './style/SavedTrips.css';
 import Map from './components/Map'
 const engine = new Styletron();
-
+   
 export default class App extends React.Component {
 
 /*ToDo Refactor
@@ -50,7 +50,11 @@ getCurrentUser(token) {
     }
   }
 
+<<<<<<< HEAD
   fetch('http://covid-travel-assessment-api.herokuapp.com/profile', config)
+=======
+  fetch('https://covid-travel-assessment-api.herokuapp.com/profile', config)
+>>>>>>> 63873600c6e921c995efe229c47939f92a947feb
   .then(response => response.json())
   .then(user => {
     this.setState({
