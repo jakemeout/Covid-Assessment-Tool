@@ -50,7 +50,7 @@ getCurrentUser(token) {
     }
   }
 
-  fetch('http://localhost:3001/profile', config)
+  fetch('http://covid-travel-assessment-api.herokuapp.com/profile', config)
   .then(response => response.json())
   .then(user => {
     this.setState({

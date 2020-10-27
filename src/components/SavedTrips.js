@@ -25,7 +25,7 @@ class SavedTrips extends React.Component{
           }
         }
       
-        fetch(`http://localhost:3001/trips/${this.state.user_id}`, config)
+        fetch(`http://covid-travel-assessment-api.herokuapp.com/trips/${this.state.user_id}`, config)
         .then(response => response.json())
         .then(trip => {
           this.setState({

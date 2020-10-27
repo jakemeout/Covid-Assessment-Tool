@@ -38,7 +38,7 @@ import Container from '@material-ui/core/Container';
             body: JSON.stringify({user:userObj})
         }
         
-        fetch("http://localhost:3001/login", options)
+        fetch("http://covid-travel-assessment-api.herokuapp.com/login", options)
         .then(response => response.json())
         .then(response => {
             this.setCookie("jwt",response.jwt,1)
