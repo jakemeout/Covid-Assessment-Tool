@@ -20,3 +20,5 @@ class AuthController < ApplicationController
     params.require(:user).permit(:user_name, :password)
   end
 end
+
+
