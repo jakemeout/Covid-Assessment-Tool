@@ -1,7 +1,7 @@
 require 'csv'
 require 'net/http'
 require 'activerecord-import'
- require 'objspace'
+require 'objspace'
 
 class Nytuscounty < ApplicationRecord
 
@@ -17,12 +17,14 @@ class Nytuscounty < ApplicationRecord
         row_count = 1
         chunk_count = 1
         
+        p ObjectSpace.memsize_of(file)
         puts "looping..."
         file.each do |row|
             if chunk_count < 90000
                 items << row.to_h
                 chunk_count += 1
                 row_count += 1
+                p ObjectSpace.memsize_of(items)
                 if row_count == (file.length - 6)
                     Nytuscounty.import(items)
                     puts "just completed the final loop"

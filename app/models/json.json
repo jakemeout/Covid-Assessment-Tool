@@ -1,0 +1,378 @@
+{
+    "message": "processed successfully",
+    "pageNumber": 17,
+    "pageSize": 20,
+    "records": [
+        {
+            "amount": 1,
+            "children": [Array
+            ],
+            "createdAt": "2020-12-16T18:07:52.168+01:00",
+            "description": "",
+            "from": [Object
+            ],
+            "id": "4fa4bb12-d9a1-497d-a4c9-4f35abf1e33f",
+            "requestIdentifier": 1207292905,
+            "requestStatus": "processed",
+            "status": "processed",
+            "to": [Object
+            ],
+            "transactions": [Array
+            ],
+            "type": "client_transaction_transfer",
+            "updatedAt": "2020-12-16T18:07:52.168+01:00"
+        },
+        {
+            "amount": 0.01,
+            "children": [Array
+            ],
+            "createdAt": "2020-12-17T15:20:28.308+01:00",
+            "from": [Object
+            ],
+            "id": "b04acb46-f4c9-4e3b-98b2-ecc5c3d58995",
+            "status": "processed",
+            "to": [Object
+            ],
+            "transactions": [Array
+            ],
+            "type": "client_create_prepaid",
+            "updatedAt": "2020-12-17T15:20:28.308+01:00"
+        },
+        {
+            "amount": 0.01,
+            "children": [Array
+            ],
+            "createdAt": "2020-12-17T15:28:56.129+01:00",
+            "from": [Object
+            ],
+            "id": "05ebf8f8-2474-4b19-97de-35d58d074719",
+            "status": "processed",
+            "to": [Object
+            ],
+            "transactions": [Array
+            ],
+            "type": "client_create_prepaid",
+            "updatedAt": "2020-12-17T15:28:56.129+01:00"
+        },
+        {
+            "amount": 0.01,
+            "children": [Array
+            ],
+            "createdAt": "2020-12-17T15:30:35.425+01:00",
+            "from": [Object
+            ],
+            "id": "ae7f8185-f6e1-407e-a0c6-c6ae301e0a84",
+            "status": "processed",
+            "to": [Object
+            ],
+            "transactions": [Array
+            ],
+            "type": "client_charge_prepaid",
+            "updatedAt": "2020-12-17T15:30:35.425+01:00"
+        },
+        {
+            "amount": 0.01,
+            "children": [Array
+            ],
+            "createdAt": "2020-12-17T15:45:49.605+01:00",
+            "from": [Object
+            ],
+            "id": "e9964653-3d3f-4089-af82-14ec54de2c15",
+            "status": "processed",
+            "to": [Object
+            ],
+            "transactions": [Array
+            ],
+            "type": "client_create_prepaid",
+            "updatedAt": "2020-12-17T15:45:49.605+01:00"
+        },
+        {
+            "children": [Array
+            ],
+            "clientId": "ba926b1e-e03e-49ff-a496-ac690f5dab7c",
+            "createdAt": "2020-12-17T17:15:40.359+01:00",
+            "destClientCoin": [Object
+            ],
+            "destExchangerCoin": [Object
+            ],
+            "exchangerId": "4b182ee5-2928-40c2-a9a7-4a5b7bc42b72",
+            "id": "1199365c-148a-4603-aa2f-98b8677291e2",
+            "incomingAmount": 100,
+            "outgoingAmount": 70,
+            "rate": [Object
+            ],
+            "realRate": -0.7,
+            "requestIdentifier": 1272074207,
+            "requestStatus": "processed",
+            "srcClientCoin": [Object
+            ],
+            "srcExchangerCoin": [Object
+            ],
+            "status": "processed",
+            "transactions": [Array
+            ],
+            "type": "exchange_transaction",
+            "updatedAt": "2020-12-17T17:15:40.359+01:00"
+        },
+        {
+            "amount": 100,
+            "children": [Array
+            ],
+            "createdAt": "2020-12-18T14:41:39.45+01:00",
+            "from": [Object
+            ],
+            "id": "9f312b50-fa90-4944-b5b8-ffb83ee31437",
+            "status": "processed",
+            "to": [Object
+            ],
+            "transactions": [Array
+            ],
+            "type": "client_create_prepaid",
+            "updatedAt": "2020-12-18T14:41:39.45+01:00"
+        },
+        {
+            "amount": 100,
+            "children": [Array
+            ],
+            "createdAt": "2020-12-18T14:42:01.121+01:00",
+            "from": [Object
+            ],
+            "id": "e8bc274e-2b49-4321-90cc-7f487c41dba4",
+            "status": "processed",
+            "to": [Object
+            ],
+            "transactions": [Array
+            ],
+            "type": "client_charge_prepaid",
+            "updatedAt": "2020-12-18T14:42:01.121+01:00"
+        },
+        {
+            "amount": 100,
+            "children": [Array
+            ],
+            "createdAt": "2020-12-18T14:45:09.854+01:00",
+            "from": [Object
+            ],
+            "id": "665813e3-0f13-4afd-9cc9-8e449b7344c6",
+            "status": "processed",
+            "to": [Object
+            ],
+            "transactions": [Array
+            ],
+            "type": "client_create_prepaid",
+            "updatedAt": "2020-12-18T14:45:09.854+01:00"
+        },
+        {
+            "amount": 100,
+            "children": [Array
+            ],
+            "createdAt": "2020-12-18T16:22:57.714+01:00",
+            "from": [Object
+            ],
+            "id": "4ce14b5c-b521-45f0-95ee-2058e86221f8",
+            "status": "processed",
+            "to": [Object
+            ],
+            "transactions": [Array
+            ],
+            "type": "client_create_prepaid",
+            "updatedAt": "2020-12-18T16:22:57.714+01:00"
+        },
+        {
+            "amount": 100,
+            "children": [Array
+            ],
+            "createdAt": "2020-12-18T16:23:21.119+01:00",
+            "from": [Object
+            ],
+            "id": "4af583a1-b723-4f66-aa54-41db35a0386f",
+            "status": "processed",
+            "to": [Object
+            ],
+            "transactions": [Array
+            ],
+            "type": "client_charge_prepaid",
+            "updatedAt": "2020-12-18T16:23:21.119+01:00"
+        },
+        {
+            "children": [Array
+            ],
+            "clientId": "ba926b1e-e03e-49ff-a496-ac690f5dab7c",
+            "createdAt": "2020-12-22T11:33:07.169+01:00",
+            "destClientCoin": [Object
+            ],
+            "destExchangerCoin": [Object
+            ],
+            "exchangerId": "4b182ee5-2928-40c2-a9a7-4a5b7bc42b72",
+            "id": "357a08af-9bfe-4760-a7c1-c673fcdd4861",
+            "incomingAmount": 100,
+            "outgoingAmount": 70,
+            "rate": [Object
+            ],
+            "realRate": -0.7,
+            "requestIdentifier": 247810589,
+            "requestStatus": "processed",
+            "srcClientCoin": [Object
+            ],
+            "srcExchangerCoin": [Object
+            ],
+            "status": "processed",
+            "transactions": [Array
+            ],
+            "type": "exchange_transaction",
+            "updatedAt": "2020-12-22T11:33:07.169+01:00"
+        },
+        {
+            "amount": 0.01,
+            "children": [Array
+            ],
+            "createdAt": "2020-12-28T17:06:22.883+01:00",
+            "description": "string",
+            "from": [Object
+            ],
+            "id": "67eb71a3-54b5-46d1-89ab-20952c0ab4dd",
+            "requestIdentifier": 1612651533,
+            "requestStatus": "processed",
+            "status": "processed",
+            "to": [Object
+            ],
+            "transactions": [Array
+            ],
+            "type": "client_transaction_transfer",
+            "updatedAt": "2020-12-28T17:06:22.883+01:00"
+        },
+        {
+            "amount": 0.01,
+            "children": [Array
+            ],
+            "createdAt": "2020-12-28T18:54:41.018+01:00",
+            "description": "string",
+            "from": [Object
+            ],
+            "id": "d05db480-1197-4a63-ac6b-975e3f21ca90",
+            "requestIdentifier": 555982216,
+            "requestStatus": "processed",
+            "status": "processed",
+            "to": [Object
+            ],
+            "transactions": [Array
+            ],
+            "type": "client_transaction_transfer",
+            "updatedAt": "2020-12-28T18:54:41.018+01:00"
+        },
+        {
+            "amount": 2,
+            "children": [Array
+            ],
+            "createdAt": "2020-12-28T18:55:11.481+01:00",
+            "description": "",
+            "from": [Object
+            ],
+            "id": "2d12c8bc-7d2e-4eae-83d7-d5b5bf65738e",
+            "requestIdentifier": 1051473441,
+            "requestStatus": "processed",
+            "status": "processed",
+            "to": [Object
+            ],
+            "transactions": [Array
+            ],
+            "type": "client_transaction_transfer",
+            "updatedAt": "2020-12-28T18:55:11.481+01:00"
+        },
+        {
+            "amount": 2,
+            "children": [Array
+            ],
+            "createdAt": "2020-12-28T18:55:31.242+01:00",
+            "description": "",
+            "from": [Object
+            ],
+            "id": "2ef16bc9-c140-4e33-9deb-313557fc7fac",
+            "requestIdentifier": 875746476,
+            "requestStatus": "processed",
+            "status": "processed",
+            "to": [Object
+            ],
+            "transactions": [Array
+            ],
+            "type": "client_transaction_transfer",
+            "updatedAt": "2020-12-28T18:55:31.242+01:00"
+        },
+        {
+            "cashAmount": 1,
+            "cashDeskId": "0c9f116e-0358-4067-8e24-738978ad1ae5",
+            "charger": [Object
+            ],
+            "children": [Array
+            ],
+            "clientCoin": [Object
+            ],
+            "createdAt": "2020-12-29T16:17:40.976+01:00",
+            "id": "0d34e5fb-e00b-4f78-ab41-085b492f0104",
+            "requestIdentifier": 1310921543,
+            "requestStatus": "pending",
+            "status": "pending",
+            "transactions": [Array
+            ],
+            "type": "cash_desk_redeem",
+            "updatedAt": "2020-12-29T16:17:40.976+01:00"
+        },
+        {
+            "amount": 1,
+            "children": [Array
+            ],
+            "clientCoin": [Object
+            ],
+            "commission": 0,
+            "createdAt": "2020-12-29T16:18:51.815+01:00",
+            "id": "84110d24-431c-4b83-a43b-50c8bc81246a",
+            "providerAccountId": "a210a4c1-8d95-47cd-8299-536018f47989",
+            "status": "processed",
+            "transactions": [Array
+            ],
+            "type": "gate_redeem",
+            "updatedAt": "2020-12-29T16:18:51.815+01:00"
+        },
+        {
+            "cashAmount": 1,
+            "cashDeskId": "0c9f116e-0358-4067-8e24-738978ad1ae5",
+            "charger": [Object
+            ],
+            "children": [Array
+            ],
+            "clientCoin": [Object
+            ],
+            "createdAt": "2020-12-29T16:21:02.128+01:00",
+            "id": "ade7abbe-b53d-4b01-bf9a-d1b9533c6834",
+            "requestIdentifier": 1586922919,
+            "requestStatus": "pending",
+            "status": "pending",
+            "transactions": [Array
+            ],
+            "type": "cash_desk_redeem",
+            "updatedAt": "2020-12-29T16:21:02.128+01:00"
+        },
+        {
+            "cashAmount": 1,
+            "cashDeskId": "0c9f116e-0358-4067-8e24-738978ad1ae5",
+            "charger": [Object
+            ],
+            "children": [Array
+            ],
+            "clientCoin": [Object
+            ],
+            "createdAt": "2020-12-29T16:26:15.625+01:00",
+            "id": "af782c17-b0e2-4cb4-8cb8-c782405c144c",
+            "requestIdentifier": 1543169060,
+            "requestStatus": "pending",
+            "status": "pending",
+            "transactions": [Array
+            ],
+            "type": "cash_desk_redeem",
+            "updatedAt": "2020-12-29T16:26:15.625+01:00"
+        }
+    ],
+    "status": "ok",
+    "totalPages": 22,
+    "totalRecords": 425
+}
