@@ -11,20 +11,20 @@ class Nytuscounty < ApplicationRecord
         Nytuscounty.delete_all
 
         uri = URI.open('https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties.csv')
-        file  = CSV.parse(uri, headers: true)
+        file  = CSV.foreach(uri, headers: true)
 
         items = []
         row_count = 1
         chunk_count = 1
-        
-        
+      
         puts "looping..."
         file.each do |row|
             if chunk_count < 50000
                 items << row.to_h
                 chunk_count += 1
                 row_count += 1
-                if row_count == (file.length - 6)
+                
+                if row == nil
                     Nytuscounty.import(items)
                     puts "just completed the final loop"
                 end
