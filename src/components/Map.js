@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Tripinfo from "./Tripinfo"
 import SaveTripForm from "./SaveTripForm"
 import {GoogleMap, useLoadScript, Marker, InfoWindow, DirectionsRenderer} from "@react-google-maps/api";
@@ -119,17 +119,17 @@ function Map(props) {
       })
     }, [])
 
-    const getCurrentFips = React.useCallback((lat, lng) => {
-      const url = `https://geo.fcc.gov/api/census/area?lat=${lat}&lon=${lng}&format=json`
-      fetch(url)
-        .then(response => response.json())
-        .then(data => {
-          setCurrentFips(() => [{
-            fips: data.results[0].county_fips,
-            county_name: data.results[0].county_name,
-          }]);
-      })
-    }, [])
+    // const getCurrentFips = React.useCallback((lat, lng) => {
+    //   const url = `https://geo.fcc.gov/api/census/area?lat=${lat}&lon=${lng}&format=json`
+    //   fetch(url)
+    //     .then(response => response.json())
+    //     .then(data => {
+    //       setCurrentFips(() => [{
+    //         fips: data.results[0].county_fips,
+    //         county_name: data.results[0].county_name,
+    //       }]);
+    //   })
+    // }, [])
 
     const getOriginFips = React.useCallback((lat, lng) => {
       const url = `https://geo.fcc.gov/api/census/area?lat=${lat}&lon=${lng}&format=json`
