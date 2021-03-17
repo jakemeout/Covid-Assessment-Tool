@@ -19,13 +19,13 @@ class Nytuscounty < ApplicationRecord
         puts "Start the looping..."
         file.each do |row|
             
-            if chunk_count == 300000
+            if chunk_count == 200000
                 Nytuscounty.import(items)
                 file_size -= chunk_count
                 chunk_count = 0
                 items = []
                 p "just completed a loop"
-            elsif file_size < 300000
+            elsif file_size < 200000
                   items << row.to_h
                   file_size -= 1
             else
