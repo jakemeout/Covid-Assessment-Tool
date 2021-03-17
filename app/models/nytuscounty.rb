@@ -12,36 +12,37 @@ class Nytuscounty < ApplicationRecord
 
         uri = URI.open('https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties.csv')
         file  = CSV.foreach(uri, headers: true)
-
+        file_size = CSV.foreach(uri, headers: true).count
+        p file_size
         items = []
-        row_count = 1
         chunk_count = 1
-      
-        puts "looping..."
+
+        puts "Start the looping..."
         file.each do |row|
-            if chunk_count < 200000
-                items << row.to_h
-                chunk_count += 1
-                
-                
-                if row["date"] == nil 
-                    
-                    Nytuscounty.import(items)
-                    puts "just completed the final loop"
-                end
-                
-            else
-                p chunk_count
+            
+            if chunk_count == 300000
                 Nytuscounty.import(items)
+                file_size -= chunk_count
                 chunk_count = 0
                 items = []
-                puts "just completed a loop"
+                p "just completed a loop"
+            elsif file_size < 300000
+                  items << row.to_h
+                  file_size -= 1
+            else
+                items << row.to_h
+                chunk_count += 1 
+            end
+            p file_size
+            if file_size == 2
+                Nytuscounty.import(items)
+                p "just completed the FINAL loop"
             end
         end
         puts "done!"
     end
 
-    # 651162
+
     def self.update_data
         uri = URI.parse('https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties.csv')
         res = Net::HTTP.get(uri)
