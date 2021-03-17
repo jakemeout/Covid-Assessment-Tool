@@ -13,6 +13,7 @@ class Nytuscounty < ApplicationRecord
         uri = URI.open('https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties.csv')
         file  = CSV.foreach(uri, headers: true)
         file_size = CSV.foreach(uri, headers: true).count
+        p file_size
         items = []
         chunk_count = 1
 
@@ -32,12 +33,14 @@ class Nytuscounty < ApplicationRecord
                 items << row.to_h
                 chunk_count += 1 
             end
-            if file_size == 2
+            if file_size == 4
                 Nytuscounty.import(items)
                 p "just completed the FINAL loop"
             end
         end
-        puts "done!"
+        p items.length
+        p file_size
+        p "done!"
     end
 
 
