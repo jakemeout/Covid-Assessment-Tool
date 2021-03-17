@@ -19,18 +19,21 @@ class Nytuscounty < ApplicationRecord
       
         puts "looping..."
         file.each do |row|
-            if chunk_count < 50000
+            if chunk_count < 200000
                 items << row.to_h
                 chunk_count += 1
-                row_count += 1
                 
-                if row == nil
+                
+                if row["date"] == nil 
+                    
                     Nytuscounty.import(items)
                     puts "just completed the final loop"
                 end
+                
             else
+                p chunk_count
                 Nytuscounty.import(items)
-                chunk_count = 1
+                chunk_count = 0
                 items = []
                 puts "just completed a loop"
             end
