@@ -1,7 +1,7 @@
 # Covid-Assessment-Tool
 The COVID Assessment Tool is a tool that allows users to get directions from a starting point to a destination and gives COVID infection data, local state and county contact/news information, as well as an overall assessment of the destinations risk. COVID assessment tool uses realtime scraped NYT COVID data on the County level, as well as Texas's repoening strategy as a guide for our assessment determinations.
 
-Signup and try out the app here: [KickApp](https://kicksterapp.herokuapp.com/)
+Signup and try out the app here: [COVID-Assessment-Tool](https://covid-travel-frontend.herokuapp.com/)
 
 # The Stack 
 This application utilizes Ruby, Ruby on Rails, JavaScriptReact, Redux, Baseweb, Google Maps API, Autocomplete, and Google React components. 
