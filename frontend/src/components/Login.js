@@ -82,7 +82,7 @@ import Container from '@material-ui/core/Container';
                         value={this.state.user_name} 
                         onChange={(e) => this.onChangeHandler(e)}
                         id="user_name"
-                        label="Username"
+                        label="Username" 
                         name="user_name"
                         autoComplete="username"
                         autoFocus
