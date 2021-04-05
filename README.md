@@ -20,4 +20,6 @@ rails s // To run the local server
 1. Navigate to the frontend folder and run `npm install`
 1. Run `npm start` to run the local server
 
+
 # ScreenShots
+![](screenshots/HomePage.png)
