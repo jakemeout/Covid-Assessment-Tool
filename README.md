@@ -22,4 +22,7 @@ rails s // To run the local server
 
 
 # ScreenShots
+## Home Page
 ![](screenshots/HomePage.png)
+## Assess a Trip
+![](screenshots/AssessTrip.png)
